@@ -1,3 +1,8 @@
+<?php 
+include('earthquake.php');
+$e=new Earthquake;
+$res=$e->get();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
