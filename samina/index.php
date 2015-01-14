@@ -1,8 +1,3 @@
-<?php 
-include('earthquake.php');
-$e=new Earthquake;
-$res=$e->get();
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -76,7 +71,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
             // Get data from database. It should be like below format or you can alter it.
 
-            var data = '[{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "27.790973300000000000,86.661108300000020000", "MarkerId": "Customer" },{ "DisplayText": "abcd", "ADDRESS": "Coimbatore-641042", "LatitudeLongitude": "28.2900,84.6898", "MarkerId": "Customer"},{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "27.3500,87.6667", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "29.5500,81.2000", "MarkerId": "Customer" }]';
+            var data = '[{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "28.25,84.94", "MarkerId": "Customer" },{ "DisplayText": "abcd", "ADDRESS": "Coimbatore-641042", "LatitudeLongitude": "27.76,88.05", "MarkerId": "Customer"},{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "29.45,85.64", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "29.73,80.93", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "27.83,87.91", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "28.23,84.09", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "28.32,84.73", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "27.30,87.62", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "29.29,81.26", "MarkerId": "Customer" },{ "DisplayText": "adcv", "ADDRESS": "Jamiya Nagar Kovaipudur Coimbatore-641042", "LatitudeLongitude": "30.11,80.93", "MarkerId": "Customer" }]';
 
             people = JSON.parse(data); 
 
@@ -160,12 +155,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     </div><!-- end of scial_sec -->
                     
      <div id="panel">
+       <form >
       <input id="address" type="textbox" value="Kathmandu,Nepal">
       <input type="button" value="Search" onclick="codeAddress()">
     </div>
                       
                       <div class="frm">  
-                       <form>
+                     
                        <span>Date:</span>
                         	 <select class="slct_2" id="bday" name="dd">
                             	<option selected="selected" id="d0" value="-1">Day</option>
@@ -339,6 +335,7 @@ require_once('TwitterAPIExchange.php');
    //print_r($twitter_data); die;
 	//$j=0;
 	 ?>
+
 		<marquee direction="up"><p>
                   <?php
 	foreach($twitter_data['statuses'] as $twitter){
@@ -352,6 +349,11 @@ require_once('TwitterAPIExchange.php');
      </div><!-- col -->
      <h2>Past Records of 2014 and 2015<h2>
      <div class="col-md-9">
+          <?php 
+include('earthquake.php');
+$e=new Earthquake;
+$res=$e->get();
+?>
     <div id="map-canvas" style="width: 800px; height: 500px;">
     </div>
         
